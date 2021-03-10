@@ -1,0 +1,27 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+  background-color: cornsilk;
+}
+
+.blue {
+  color: blue;
+}
+
+.red {
+  color: red;
+}
+
+#word {
+  font-family: 'Permanent Marker', cursive;
+  text-transform: capitalize;
+}
+
+#letters {
+    text-transform: capitalize;
+}
+
+span:hover {
+  background: goldenrod;
+}
+
