@@ -13,15 +13,24 @@
 <body>
   <script src="js/hangman.js"></script>
 
-  <h1>HANGMAN</h1>
+  <!-- title jazz -->
+  <h1 class="title">HANGMAN</h1>
+  <p class="by">
+    by Jared Pinfold
+  </p>
+  <button onclick="gameInit()">NEW GAME</button>
+  
+  <!-- Gallows -->
   <img src="images/0.png">
 
-  <p id="word">
-    j u l y
-  </p>
+  <!-- Secret word -->
+  <div id="word" class="container">
+    
+  </div>
   <br>
+  <!-- Letters -->
   <div id="letters">
-    <span id="a">a</span> b c d e f e g h<br>
+    <span id="a" onclick="checkLetter(a)">a</span> b c d e f e g h<br>
     i j k l m n o p q<br>
     r s t u v w x y z
   </div>

@@ -4,12 +4,25 @@ body {
   background-color: cornsilk;
 }
 
+.title {
+  margin-bottom: 0;
+}
+
+.by {
+  margin-top: 0;
+}
+
 .blue {
   color: blue;
 }
 
 .red {
   color: red;
+}
+
+.invisible {
+  border-bottom: thick solid black;
+  color: cornsilk;
 }
 
 #word {

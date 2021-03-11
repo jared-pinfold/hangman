@@ -11,10 +11,9 @@ var secretWord = ""
 /////// Functions
 
 function gameInit() {
-  // select a word from the list
-  // split the word into an array of letters
-  // create the word row in hmtl
-
+  // clear board from previous game (if any)  
+  selectWord() // select a word from the list &split the word into an array of letters
+  createWordRow() // create the word row in hmtl
 }
 
 // listen for letter clicks
@@ -25,11 +24,41 @@ function gameInit() {
   // change letter colour on letter board
   // remove click functionality on letter board
   //check for win or loss
+function checkLetter(l) {
+  // x = document.getElementsByClassName(l)
+  // console.log(x)
+  l = l
+}
 
+function selectWord () {
+  x = randomRange(0, (wordList.length - 1))
+  str = wordList[x]
+  secretWord = str.split("")
+  wordList.splice(x,1)
+}
 
+function randomRange(myMin, myMax) {
+  return Math.floor(Math.random() * (myMax - myMin +1)) + myMin;
+}
 
+function createWordRow() {
+  wordRow = document.getElementById("word")
+  secretWord.forEach(element => {
+    letter = document.createElement("div")
+    // letter.setAttribute("class","invisible")
+    letter.className = ["invisible", element].join(" ")
+    // letter.setAttribute("class", element)
+    letter.innerHTML = element
+    wordRow.appendChild(letter)
+  })
+}
 
-
+  // gameInProgress = true
+  // var image = document.createElement("IMG")
+  // image.setAttribute("src", "mole.png")
+  // image.setAttribute("onClick", "moveMole()")
+  // let x = document.getElementById("table").rows[row].cells;
+  // x[column].appendChild(image)
 
 
 
@@ -116,9 +145,9 @@ function gameInit() {
     }
   }
   
-  function randomRange(myMin, myMax) {
-    return Math.floor(Math.random() * (myMax - myMin +1)) + myMin;
-  }
+  // function randomRange(myMin, myMax) {
+  //   return Math.floor(Math.random() * (myMax - myMin +1)) + myMin;
+  // }
 
   function selectBoard() {
     selectedBoard = availableBoards[randomRange(0, (availableBoards.length - 1))]
