@@ -29,6 +29,11 @@ body {
   margin: 15px;
 }
 
+.largeType {
+  font-size: xx-large;
+  text-align: center;
+}
+
 #word {
   font-family: 'Permanent Marker', cursive;
   text-transform: capitalize;
