@@ -20,21 +20,23 @@ var images = [
   "./images/6.png"
 ]
 var letterQuery = ""
+var correctLetters = 0
 
 /////// Functions
 
 function gameInit() {
   // clear board from previous game (if any)  
-  // resetBoard()
-  console.log("reset board")
+  resetBoard()
   selectWord() // select a word from the list & split the word into an array of letters
-  console.log("select word")
   createWordRow() // create the word row in hmtl
-  console.log("create word row")
 }
 
 function resetBoard() {
-  wordRow.innerHTML = ""
+  wordRow = document.getElementById("word")
+  wordRow.textContent = ""
+  document.getElementById("gallows").src = "./images/0.png"
+  hangCounter = 0
+  correctLetters = 0
 }
 
 function checkLetter(l) {
@@ -42,9 +44,6 @@ function checkLetter(l) {
   letterQuery = l
   secretWord.forEach(letterAppear)
   if (letterPresent == true){
-    // make letter appear in word
-    
-
     x = document.getElementById(l)
     x.setAttribute("class", "blue")
     x.setAttribute("onclick", "")
@@ -53,8 +52,8 @@ function checkLetter(l) {
     x.setAttribute("class", "red")
     x.setAttribute("onclick", "")
     hangCounter ++
-    changeHangedStatus()
   }
+  changeHangedStatus()
 }
 
 function letterAppear(element, index) {
@@ -62,11 +61,17 @@ function letterAppear(element, index) {
     letterPresent = true
     letterId = document.getElementById(index)
     letterId.innerHTML = element
+    correctLetters++
   }
 }
 
 function changeHangedStatus () {
-  document.getElementById("gallows").src = images[hangCounter]
+  if (correctLetters == secretWord.length) {
+    document.getElementById("gallows").src = "./images/7.png"
+  } else {
+    document.getElementById("gallows").src = images[hangCounter]
+  }
+  
 }
 
 function selectWord () {
