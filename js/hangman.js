@@ -4,7 +4,8 @@
 
 
 /// Declare global variables
-var wordList = ["july", "quartz", "chrysanthemum", "dryad", "helium", "zero", "ward", "error", "maw", "ferrous", "malignant", "pony", "sunshine"]
+var wordList = ["july", "quartz", "chrysanthemum", "dryad", "helium", "zero", "ward", "error", "maw", "ferrous", "malignant", "pony", "sunshine", "vinegar", "clavicle"]
+var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var secretWord = ""
 space = document.createElement("div")
 space.innerHTML = " "
@@ -37,7 +38,15 @@ function resetBoard() {
   document.getElementById("gallows").src = "./images/0.png"
   hangCounter = 0
   correctLetters = 0
+  alphabet.forEach(resetLetterBoard)
 }
+
+function resetLetterBoard(element) {
+  x = document.getElementById(element)
+  x.setAttribute("class", "")
+  x.setAttribute("onclick", "checkLetter('" + element + "')")
+}
+
 
 function checkLetter(l) {
   letterPresent = false
@@ -84,20 +93,6 @@ function selectWord () {
 function randomRange(myMin, myMax) {
   return Math.floor(Math.random() * (myMax - myMin +1)) + myMin;
 }
-
-
-// function createWordRow() {
-//   wordRow = document.getElementById("word")
-//   secretWord.forEach(element[index] => {
-//     letter = document.createElement("div")
-//     letter.className = ["secretLetter", element].join(" ")
-//     letter.innerHTML = "_"
-//     letter.setAttribute("cid", index)
-//     wordRow.appendChild(letter);
-//   })
-
-// }
-
 
 function createWordRow() {
   wordRow = document.getElementById("word")
