@@ -77,10 +77,14 @@ function letterAppear(element, index) {
 function changeHangedStatus () {
   if (correctLetters == secretWord.length) {
     document.getElementById("gallows").src = "./images/7.png"
-    alert("You have escaped the hangman's noose for another day.. Click the New Game button if you'd like to play again.")
+    setTimeout(function() {
+      alert("You have escaped the hangman's noose for another day.. Click the New Game button if you'd like to play again.");
+    }, 25)
   } else if (hangCounter == 6) {
     document.getElementById("gallows").src = images[hangCounter]
-    alert("Tragically you have been hanged... The secret word was '" + secretWord.join("") + "'. Click the New Game button if you'd like to play again.")
+    setTimeout(function() {
+      alert("Tragically you have been hanged... The secret word was '" + secretWord.join("") + "'. Click the New Game button if you'd like to play again.");
+    }, 25)
   } else {
     document.getElementById("gallows").src = images[hangCounter]
   }
