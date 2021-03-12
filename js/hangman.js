@@ -79,12 +79,12 @@ function changeHangedStatus () {
     document.getElementById("gallows").src = "./images/7.png"
     setTimeout(function() {
       alert("You have escaped the hangman's noose for another day.. Click the New Game button if you'd like to play again.");
-    }, 25)
+    }, 750)
   } else if (hangCounter == 6) {
     document.getElementById("gallows").src = images[hangCounter]
     setTimeout(function() {
       alert("Tragically you have been hanged... The secret word was '" + secretWord.join("") + "'. Click the New Game button if you'd like to play again.");
-    }, 25)
+    }, 750)
   } else {
     document.getElementById("gallows").src = images[hangCounter]
   }
