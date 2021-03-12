@@ -18,21 +18,54 @@
   <p class="by">
     by Jared Pinfold
   </p>
-  <button onclick="gameInit()">NEW GAME</button>
   
   <!-- Gallows -->
-  <img src="images/0.png">
+  <div class="container">
+    <img src="images/0.png" id="gallows">
+  </div>
+  
+  <div class="container">
+    <button onclick="gameInit()">NEW GAME</button>
+  </div>
+
 
   <!-- Secret word -->
   <div id="word" class="container">
-    
+    <!-- filled by the JS file -->
   </div>
   <br>
+
+
   <!-- Letters -->
-  <div id="letters">
-    <span id="a" onclick="checkLetter(a)">a</span> b c d e f e g h<br>
-    i j k l m n o p q<br>
-    r s t u v w x y z
+  <div id="letters" class="container">
+    <div>
+      <span id="a" onclick="checkLetter('a')">a</span>
+      <span id="b" onclick="checkLetter('b')">b</span>
+      <span id="c" onclick="checkLetter('c')">c</span>
+      <span id="d" onclick="checkLetter('d')">d</span>
+      <span id="e" onclick="checkLetter('e')">e</span>
+      <span id="f" onclick="checkLetter('f')">f</span>
+      <span id="g" onclick="checkLetter('g')">g</span>
+      <span id="h" onclick="checkLetter('h')">h</span>
+      <span id="i" onclick="checkLetter('i')">i</span>
+      <span id="j" onclick="checkLetter('j')">j</span>
+      <span id="k" onclick="checkLetter('k')">k</span>
+      <span id="l" onclick="checkLetter('l')">l</span>
+      <span id="m" onclick="checkLetter('m')">m</span>
+      <span id="n" onclick="checkLetter('n')">n</span>
+      <span id="o" onclick="checkLetter('o')">o</span>
+      <span id="p" onclick="checkLetter('p')">p</span>
+      <span id="q" onclick="checkLetter('q')">q</span>
+      <span id="r" onclick="checkLetter('r')">r</span>
+      <span id="s" onclick="checkLetter('s')">s</span>
+      <span id="t" onclick="checkLetter('t')">t</span>
+      <span id="u" onclick="checkLetter('u')">u</span>
+      <span id="v" onclick="checkLetter('v')">v</span>
+      <span id="w" onclick="checkLetter('w')">w</span>
+      <span id="x" onclick="checkLetter('x')">x</span>
+      <span id="y" onclick="checkLetter('y')">y</span>
+      <span id="z" onclick="checkLetter('z')">z</span>
+    </div>
   </div>
   
 
