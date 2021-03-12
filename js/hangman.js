@@ -39,6 +39,7 @@ function resetBoard() {
   hangCounter = 0
   correctLetters = 0
   alphabet.forEach(resetLetterBoard)
+  console.log("Is this working?")
 }
 
 function resetLetterBoard(element) {
